@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Luciano Castillo | Odontologia Especializada</title>
+    <meta name="description" content="Especialista em Implantes Dentários e Reabilitação Oral em Santa Maria - RS. Mais de 2.000 implantes realizados.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --cyan-light: #e0f7fa;
+            --cyan-primary: #00bcd4;
+            --black: #1a1a1a;
+            --gray-dark: #333333;
+            --gray-light: #f5f5f5;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.7);
+            --shadow: 0 8px 32px 0 rgba(0, 188, 212, 0.1);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at top right, #ffffff, var(--cyan-light));
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--cyan-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan-primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .hero h1 em {
+            color: var(--cyan-primary);
+            font-style: normal;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--cyan-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        /* About Section */
+        .about {
+            background-color: transparent;
+        }
+
+        .section-tag {
+            background: var(--black);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            width: fit-content;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--black);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-item p {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--cyan-primary);
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: transparent;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-icon {
+            color: var(--cyan-primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--cyan-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Differentials Section */
+        .differentials {
+            background-color: var(--black);
+            color: var(--white);
+            border-radius: 40px;
+            margin: 0 2rem;
+        }
+
+        .differentials .section-title {
+            color: var(--white);
+        }
+
+        .differentials .section-tag {
+            background: var(--cyan-primary);
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .diff-item {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .diff-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cyan-primary);
+        }
+
+        .diff-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .diff-content p {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background-color: transparent;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: transparent;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: var(--black);
+            color: white;
+            padding: 30px;
+            border-radius: 24px;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: var(--cyan-primary);
+            opacity: 0.3;
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 2px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--cyan-primary);
+        }
+
+        .author-info h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        /* Location Section */
+        .location {
+            background-color: transparent;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .map-container {
+            height: 450px;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .info-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .info-list li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .info-list i {
+            color: var(--cyan-primary);
+            flex-shrink: 0;
+        }
+
+        /* Additional Info */
+        .additional-info {
+            background-color: transparent;
+            padding: 60px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .info-box h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: var(--black);
+            font-weight: 800;
+        }
+
+        .info-box p {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag {
+            font-size: 10px;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            background-color: var(--cyan-primary);
+            color: var(--white);
+            text-align: center;
+            padding: 120px 0;
+            margin: 0 2rem 4rem;
+            border-radius: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-final h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: transparent;
+            color: #888;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.75rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 992px) {
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            .cta-final h2 {
+                font-size: 2.5rem;
+            }
+            .differentials, .cta-final {
+                margin: 0 1rem 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPrRP9hZoW4NTKmFFjJr-kAi0l8VPF8JAt5FDu-=s680-w680-h510-rw" alt="Luciano Castillo Logo" style="height: 50px; width: auto;" referrerPolicy="no-referrer">
+            </a>
+            <div class="nav-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#localizacao">Localização</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container" style="text-align: center; display: flex; justify-content: center;">
+            <div class="hero-content reveal">
+                <span class="section-tag" style="margin: 0 auto 16px;">Odontologia Especializada</span>
+                <h1>Transformando sorrisos em <em>autoestima</em>.</h1>
+                <p>Especialista em implantes dentários com tecnologia avançada e atendimento humanizado em Santa Maria.</p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="#localizacao" class="btn btn-primary">Agendar Avaliação</a>
+                    <a href="https://wa.me/5555992103707" target="_blank" class="btn btn-whatsapp">
+                        <i data-lucide="message-circle"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-text reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <span class="section-tag" style="margin: 0 auto 16px;">O Especialista</span>
+                <h2 class="section-title">Dr. Luciano Castillo</h2>
+                <p>Com uma trajetória marcada pela excelência e precisão, o Dr. Luciano Castillo é referência em reabilitação oral e implantes dentários.</p>
+                <p>Nosso compromisso vai além da técnica: buscamos entender a história de cada paciente para proporcionar um atendimento verdadeiramente humanizado, utilizando o que há de mais moderno na odontologia mundial.</p>
+                
+                <div class="stats" style="justify-content: center;">
+                    <div class="stat-item">
+                        <h3>+2.000</h3>
+                        <p>Implantes Realizados</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Anos de Experiência</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="services">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;" class="reveal">
+                <span class="section-tag">Nossas Especialidades</span>
+                <h2 class="section-title">Serviços de Alta Performance</h2>
+                <p>Soluções completas para a sua saúde bucal e estética do sorriso.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon"><i data-lucide="shield-check" size="40"></i></div>
+                    <h3>Implantes Dentários</h3>
+                    <p>Reposição de dentes perdidos com máxima naturalidade, segurança e durabilidade.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i data-lucide="refresh-cw" size="40"></i></div>
+                    <h3>Reabilitação Oral</h3>
+                    <p>Tratamentos complexos para devolver a função mastigatória e a estética completa.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i data-lucide="sparkles" size="40"></i></div>
+                    <h3>Estética Dental</h3>
+                    <p>Lentes de contato, facetas e clareamento para o sorriso dos seus sonhos.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i data-lucide="clipboard-check" size="40"></i></div>
+                    <h3>Avaliação Completa</h3>
+                    <p>Diagnóstico preciso com tecnologia de ponta para planejar seu tratamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentials Section -->
+    <section id="diferenciais" class="differentials">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-tag">Por que nos escolher?</span>
+                <h2 class="section-title">Diferenciais Premium</h2>
+            </div>
+
+            <div class="diff-grid">
+                <div class="diff-item reveal">
+                    <div class="diff-icon"><i data-lucide="award"></i></div>
+                    <div class="diff-content">
+                        <h3>Experiência Comprovada</h3>
+                        <p>Mais de 2.000 implantes realizados com sucesso e pacientes satisfeitos.</p>
+                    </div>
+                </div>
+                <div class="diff-item reveal">
+                    <div class="diff-icon"><i data-lucide="heart"></i></div>
+                    <div class="diff-content">
+                        <h3>Atendimento Humanizado</h3>
+                        <p>Cuidado individualizado focado no seu conforto e bem-estar.</p>
+                    </div>
+                </div>
+                <div class="diff-item reveal">
+                    <div class="diff-icon"><i data-lucide="cpu"></i></div>
+                    <div class="diff-content">
+                        <h3>Tecnologia Avançada</h3>
+                        <p>Equipamentos modernos para procedimentos mais rápidos e indolores.</p>
+                    </div>
+                </div>
+                <div class="diff-item reveal">
+                    <div class="diff-icon"><i data-lucide="map-pin"></i></div>
+                    <div class="diff-content">
+                        <h3>Localização Central</h3>
+                        <p>Situado no coração de Santa Maria, com fácil acesso e conveniência.</p>
+                    </div>
+                </div>
+                <div class="diff-item reveal">
+                    <div class="diff-icon"><i data-lucide="gem"></i></div>
+                    <div class="diff-content">
+                        <h3>Consultório Premium</h3>
+                        <p>Ambiente sofisticado projetado para oferecer uma experiência relaxante.</p>
+                    </div>
+                </div>
+                <div class="diff-item reveal">
+                    <div class="diff-icon"><i data-lucide="accessibility"></i></div>
+                    <div class="diff-content">
+                        <h3>Acessibilidade Total</h3>
+                        <p>Estrutura completa para receber todos os pacientes com dignidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipOh1V-601kfuZJ14SZjVXwUc3piAc846BixS9fK=s680-w680-h510-rw" alt="Consultório 1" referrerPolicy="no-referrer">
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPyWTrO8xe2Kn0TE4kfSiB8P4CgeqMWCY0B8t2U=s680-w680-h510-rw" alt="Consultório 2" referrerPolicy="no-referrer">
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipP8YAV6xz9FClKlhsBhqi0Mnb4OsWjrxLBwDs7P=s680-w680-h510-rw" alt="Consultório 3" referrerPolicy="no-referrer">
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipNgPClmFXYFmrDrB_zNT15CoU2dV1Nmcn49QMsi=s680-w680-h510-rw" alt="Consultório 4" referrerPolicy="no-referrer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="testimonials">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;" class="reveal">
+                <span class="section-tag">Depoimentos</span>
+                <h2 class="section-title">O que dizem nossos pacientes</h2>
+            </div>
+
+            <div class="testimonial-grid">
+                <!-- Depoimento 1 -->
+                <div class="testimonial-card reveal">
+                    <i data-lucide="quote" class="quote-icon" size="48"></i>
+                    <div class="stars">
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                    </div>
+                    <p class="testimonial-text">"Recomendo o tratamento de implante dentário com Dr. Luciano, ótimo profissional, atencioso e passa muita segurança no que faz."</p>
+                    <div class="testimonial-author">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjUgRObaWY7qZNTEz6bEPBzx6jXDBfBqbwELhRAihxJ1DV-5Cek=w64-h64-p-rp-mo-br100" alt="Rosinair Machado" class="author-img" referrerPolicy="no-referrer">
+                        <div class="author-info">
+                            <h4>Rosinair Machado</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="testimonial-card reveal">
+                    <i data-lucide="quote" class="quote-icon" size="48"></i>
+                    <div class="stars">
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                    </div>
+                    <p class="testimonial-text">"O Dr Luciano é um profissional excepcional. Fiz todo meu tratamento de reabilitação com ele e o resultado superou todas as expectativas."</p>
+                    <div class="testimonial-author">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjVEzMfXXn3YthPQJsSIN2S4HjtW1FzVOfnE2bxtKoXV88Yc0SQ=w64-h64-p-rp-mo-br100" alt="Luciano Oliveira" class="author-img" referrerPolicy="no-referrer">
+                        <div class="author-info">
+                            <h4>Luciano Oliveira</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="testimonial-card reveal">
+                    <i data-lucide="quote" class="quote-icon" size="48"></i>
+                    <div class="stars">
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                        <i data-lucide="star" fill="currentColor" size="16"></i>
+                    </div>
+                    <p class="testimonial-text">"Maravilhosa! Fiz implantes, um atendimento totalmente indolor e com muita paciência. Recomendo a todos que têm medo de dentista."</p>
+                    <div class="testimonial-author">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjVpvFHJpvH-jTWMut02otUiLvZpL15YTzExap3o53xsbe672pw=w64-h64-p-rp-mo-br100" alt="Maria Oliveira" class="author-img" referrerPolicy="no-referrer">
+                        <div class="author-info">
+                            <h4>Maria Oliveira</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="localizacao" class="location">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-info reveal">
+                    <span class="section-tag">Onde estamos</span>
+                    <h2 class="section-title">Visite nosso consultório</h2>
+                    <p>Localizado no Torre Caridade Office, oferecemos uma estrutura moderna e acessível no centro de Santa Maria.</p>
+                    
+                    <ul class="info-list">
+                        <li>
+                            <i data-lucide="map-pin"></i>
+                            <div>
+                                <strong>Endereço</strong><br>
+                                Rua dos Andradas, 1449 - Sala 207<br>
+                                Centro, Santa Maria - RS
+                            </div>
+                        </li>
+                        <li>
+                            <i data-lucide="clock"></i>
+                            <div>
+                                <strong>Horário de Atendimento</strong><br>
+                                Segunda-feira: 08:00 às 18:00
+                            </div>
+                        </li>
+                        <li>
+                            <i data-lucide="instagram"></i>
+                            <div>
+                                <strong>Instagram</strong><br>
+                                @dr.lucianocastillo
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="map-container reveal">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3469.324278456865!2d-53.8116!3d-29.6842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9503cb0000000000%3A0x0!2zMjnCsDQxJzAzLjEiUyA1M8KwNDgnNDEuOCJX!5e0!3m2!1spt-BR!2sbr!4v1713100000000!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info -->
+    <section class="additional-info">
+        <div class="container">
+            <div class="info-grid reveal">
+                <div class="info-box">
+                    <h4>Acessibilidade</h4>
+                    <span class="tag">Banheiro adaptado</span>
+                    <span class="tag">Estacionamento acessível</span>
+                </div>
+                <div class="info-box">
+                    <h4>Pagamentos</h4>
+                    <span class="tag">Cartão de Crédito</span>
+                    <span class="tag">Cartão de Débito</span>
+                    <span class="tag">NFC (Aproximação)</span>
+                    <span class="tag">PIX</span>
+                </div>
+                <div class="info-box">
+                    <h4>Contato Direto</h4>
+                    <p>(55) 99210-3707</p>
+                    <p>contato@lucianocastillo.com.br</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container reveal">
+            <h2>Agende sua avaliação agora</h2>
+            <a href="https://wa.me/5555992103707" target="_blank" class="btn btn-primary" style="background: white; color: var(--black); padding: 1.5rem 3rem; font-size: 1rem;">
+                Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Luciano Castillo Odontologia Especializada. Todos os direitos reservados.</p>
+            <p style="margin-top: 10px;">Desenvolvido com excelência.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Reveal animations on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Mobile menu toggle (placeholder)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            alert('Menu mobile em desenvolvimento. Use o scroll para navegar.');
+        });
+    </script>
+</body>
+</html>
